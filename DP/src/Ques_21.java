@@ -9,10 +9,10 @@ public class Ques_21 {
         int min = Integer.MAX_VALUE; 
         for (int i = start + 1; i <= end && i <= start + arr[start]; i++) { 
             int jumps = minJumps(arr, i, end); 
-            if (jumps != Integer.MAX_VALUE && jumps + 1 < min) 
-                min = jumps + 1; 
+            if (jumps != Integer.MAX_VALUE && jumps < min) 
+                min = jumps; 
         } 
-        return min; 
+        return min+1; 
     } 
   
     public static void main(String args[]) 
