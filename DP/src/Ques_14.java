@@ -1,10 +1,16 @@
 
 public class Ques_14 {
 
-	public boolean isMatch(String text, String pattern) {
+	/*
+	 * 1- If there were no stars the problem very easy
+	 * 2- When a star present, 
+	 *    # check many different suffixes of the text and see if they match the rest of the pattern. 
+	 * */
+	 static boolean isMatch(String text, String pattern) {
 		if (pattern.isEmpty())
 			return text.isEmpty();
-		boolean first_match = (!text.isEmpty() && (pattern.charAt(0) == text.charAt(0) || pattern.charAt(0) == '.'));
+		boolean first_match = (!text.isEmpty() && (pattern.charAt(0) == text.charAt(0) 
+				|| pattern.charAt(0) == '.'));
 
 		if (pattern.length() >= 2 && pattern.charAt(1) == '*') {
 			return (isMatch(text, pattern.substring(2)) || (first_match && isMatch(text.substring(1), pattern)));
@@ -12,5 +18,12 @@ public class Ques_14 {
 			return first_match && isMatch(text.substring(1), pattern.substring(1));
 		}
 	}
-
+	
+	public static void main(String[] args) {
+		System.out.println(isMatch("aa", "a")); // false
+		System.out.println(isMatch("aa", "a*"));//true
+		System.out.println(isMatch("ab", ".*"));//true
+		System.out.println(isMatch("aab", "c*a*b"));//true
+		System.out.println(isMatch("mississippi", "mis*is*p*.")); //false	
+	}
 }

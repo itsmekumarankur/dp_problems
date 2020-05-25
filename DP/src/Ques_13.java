@@ -1,5 +1,9 @@
 public class Ques_13 {
 
+	/*
+	 * Must Watch, very imp question
+	 * https://www.youtube.com/watch?v=S49zeUjeUL0&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=43
+	*/
 	static int eggDrop(int eggs, int floor) {
 		if (floor == 1 || floor == 0)
 			return floor;
@@ -7,9 +11,9 @@ public class Ques_13 {
 			return floor;
 
 		int min = Integer.MAX_VALUE;
-		int x, res;
-		for (x = 1; x <= floor; x++) {
-			res = Math.max(eggDrop(eggs - 1, x - 1), eggDrop(eggs, floor - x));
+		int  res;
+		for (int k = 1; k <= floor; k++) {
+			res = Math.max(eggDrop(eggs - 1, k - 1), eggDrop(eggs, floor - k));
 			if (res < min)
 				min = res;
 		}
