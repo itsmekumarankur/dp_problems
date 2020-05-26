@@ -1,9 +1,10 @@
+package tushar.graph.questions.ques_1;
+import tushar.graph.questions.Graph;
+import tushar.graph.questions.Vertex;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
-import java.util.HashSet;
-import java.util.Deque;
-import java.util.ArrayDeque;
 
 /**
  *         Given a directed acyclic graph, do a topological sort on this graph.
