@@ -7,7 +7,7 @@ For example, for N = 4 and S = {1,2,3}, there are four solutions:
 public class Ques_12 {
 	static int count(int input[], int index, int value) {
 		if (value == 0)
-			return 1;
+			return 1; // very important returning 1
 		if (value < 0)
 			return 0;
 		if (index == input.length && value >= 1)

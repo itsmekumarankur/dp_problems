@@ -3,6 +3,7 @@
 Given a value V, if we want to make change for V cents, and we have infinite supply of each of C = { C1, C2, .. , Cm} valued coins, 
 what is the minimum number of coins to make the change?
  * */
+
 public class Ques_11 {
 
 	static int minCoins(int coins[], int V) {
@@ -19,9 +20,19 @@ public class Ques_11 {
 		}
 		return res+1;
 	}
+	
+	static int minCoins_Alternate(int input[], int index, int value) {
+		if (value == 0)
+			return 0;
+		if (value < 0)
+			return Integer.MAX_VALUE-1000;
+		if (index == input.length && value >= 1)
+			return Integer.MAX_VALUE-1000;
+		return Math.min(minCoins_Alternate(input, index + 1, value) , 1+minCoins_Alternate(input, index, value - input[index]));
+	}
 
 	public static void main(String args[]) {
 		int coins[] = { 9, 6, 5, 1 };
-		System.out.println("Minimum coins required is " + minCoins(coins, 11));
+		System.out.println("Minimum coins required is " + minCoins_Alternate(coins, 0,17));
 	}
 }
