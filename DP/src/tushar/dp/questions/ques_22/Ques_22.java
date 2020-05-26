@@ -1,4 +1,4 @@
-
+package tushar.dp.questions.ques_22;
 public class Ques_22 {
 	 /* minimum cost path from (0,0) to (m, n) in mat[R][C]*/
 	static int minCost(int cost[][], int m, int n) {

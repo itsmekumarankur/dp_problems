@@ -1,3 +1,4 @@
+package tushar.dp.questions.ques_1;
 public class Ques_1 {
 
 	public static int knapsack_01(int[] weight, int value[], int maxWeight, int index) {

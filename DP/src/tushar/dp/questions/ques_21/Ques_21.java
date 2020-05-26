@@ -1,3 +1,4 @@
+package tushar.dp.questions.ques_21;
 public class Ques_21 { 
     static int minJumps(int arr[], int start, int end) 
     { 

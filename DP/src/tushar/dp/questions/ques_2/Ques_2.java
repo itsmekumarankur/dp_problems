@@ -1,4 +1,4 @@
-
+package tushar.dp.questions.ques_2;
 public class Ques_2 {
 
 	static int longestCommonSubSequence(String str1, String str2) {

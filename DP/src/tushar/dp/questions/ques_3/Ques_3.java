@@ -1,3 +1,4 @@
+package tushar.dp.questions.ques_3;
 public class Ques_3 {
 	static int MatrixChainOrder(int input[], int start, int end) {
 		if (start == end)

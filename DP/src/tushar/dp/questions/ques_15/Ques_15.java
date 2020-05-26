@@ -1,4 +1,4 @@
-
+package tushar.dp.questions.ques_15;
 public class Ques_15 {
 
 	class Result {
