@@ -8,7 +8,7 @@ import java.util.List;
 import tushar.graph.questions.Edge;
 import tushar.graph.questions.Graph;
 import tushar.graph.questions.Vertex;
-import tushar.graph.questions.ques_5.DisjointSet;
+import tushar.graph.questions.set_1.ques_5.DisjointSet;
 
 /**
  * Date 09/25/2014
