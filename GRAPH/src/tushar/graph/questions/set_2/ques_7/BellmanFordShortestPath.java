@@ -1,94 +1,97 @@
 package tushar.graph.questions.set_2.ques_7;
 
-
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Scanner;
 
 /**
  * Date 11/05/2015
+ * 
  * @author Tushar Roy
  *
- * Write program for Bellman Ford algorithm to find single source shortest path in directed graph.
- * Bellman ford works with negative edges as well unlike Dijksra's algorithm. If there is negative
- * weight cycle it detects it.
- *
- * Time complexity - O(EV)
- * Space complexity - O(V)
- *
- * References
- * https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
- * http://www.geeksforgeeks.org/dynamic-programming-set-23-bellman-ford-algorithm/
+ *         Write program for Bellman Ford algorithm to find single source
+ *         shortest path in directed graph. Bellman ford works with negative
+ *         edges as well unlike Dijksra's algorithm. If there is negative weight
+ *         cycle it detects it.
  */
 
-public class BellmanFordShortestPath {
+class Edge {
+	int src, dest, weight;
+};
 
-    //some random big number is treated as infinity. I m not taking INTEGER_MAX as infinity because
-    //doing any addition on that causes integer overflow
-    private static int INFINITY = 10000000;
+class Graph {
+	final int inf = Integer.MAX_VALUE;
+	int v, e;
+	Edge[] edge;
 
-    class NegativeWeightCycleException extends RuntimeException {
-    }
-    
-    public Map<Vertex<Integer>, Integer> getShortestPath(Graph<Integer> graph,
-            Vertex<Integer> sourceVertex) {
+	Graph(int v, int e) {
+		this.v = v;
+		this.e = e;
+		edge = new Edge[e];
+	}
 
-        Map<Vertex<Integer>, Integer> distance = new HashMap<>();
-        Map<Vertex<Integer>, Vertex<Integer>> parent = new HashMap<>();
+	void addEdge(int u, int v, int w, int count) {
+		edge[count].src = u;
+		edge[count].dest = v;
+		edge[count].weight = w;
+	}
 
-        //set distance of every vertex to be infinity initially
-        for(Vertex<Integer> v : graph.getAllVertex()) {
-            distance.put(v, INFINITY);
-            parent.put(v, null);
-        }
+	void Bellmanford(int src) {
+		int distance[] = new int[v];
+		for (int i = 0; i < v; i++) {
+			if (i == src) {
+				distance[i] = 0;
+			} else {
+				distance[i] = inf;
+			}
+		}
+		// Rekaxation time
+		for (int i = 1; i <= v - 1; i++) {
+			for (int j = 0; j < e; j++) {
+				int src = edge[j].src;
+				int dest = edge[j].dest;
+				int wt = edge[j].weight;
 
-        //set distance of source vertex to be 0
-        distance.put(sourceVertex, 0);
+				// Relaxation check;
+				if (distance[src] != inf && distance[src] + wt < distance[dest]) {
+					distance[dest] = distance[src] + wt;
+				}
+			}
+		}
+		// check for negative weight cycle
+		for (int j = 0; j < e; j++) {
+			int src = edge[j].src;
+			int dest = edge[j].dest;
+			int wt = edge[j].weight;
 
-        int V = graph.getAllVertex().size();
+			// Relaxation check;
+			if (distance[src] != inf && distance[src] + wt < distance[dest]) {
+				// distance[dest] = distance[src] + wt;
+				System.out.println("Graph has negative cycle");
+				return;
+			}
+		}
+		for (int i = 0; i < v; i++) {
+			System.out.println(i + "  " + distance[i]);
+		}
+		return;
+	}
 
-        //relax edges repeatedly V - 1 times
-        for (int i = 0; i < V - 1 ; i++) {
-            for (Edge<Integer> edge : graph.getAllEdges()) {
-                Vertex<Integer> u = edge.getVertex1();
-                Vertex<Integer> v = edge.getVertex2();
-                //relax the edge
-                //if we get better distance to v via u then use this distance
-                //and set u as parent of v.
-                if (distance.get(u) + edge.getWeight() < distance.get(v)) {
-                    distance.put(v, distance.get(u) + edge.getWeight());
-                    parent.put(v, u);
-                }
-            }
-        }
+	public static void main(String[] args) {
+		int v, e;
+		Scanner s = new Scanner(System.in);
+		v = s.nextInt();
+		e = s.nextInt();
 
-        //relax all edges again. If we still get lesser distance it means
-        //there is negative weight cycle in the graph. Throw exception in that
-        //case
-        for (Edge<Integer> edge : graph.getAllEdges()) {
-            Vertex<Integer> u = edge.getVertex1();
-            Vertex<Integer> v = edge.getVertex2();
-            if (distance.get(u) + edge.getWeight() < distance.get(v)) {
-                throw new NegativeWeightCycleException();
-            }
-        }
-        return distance;
-    }
+		Graph g = new Graph(v, e);
+		for (int i = 0; i < e; i++) {
+			int u, v, w;
+			u = s.nextInt();
+			v = s.nextInt();
+			w = s.nextInt();
 
-    public static void main(String args[]){
-        
-        Graph<Integer> graph = new Graph<>(false);
-        graph.addEdge(0, 3, 8);
-        graph.addEdge(0, 1, 4);
-        graph.addEdge(0, 2, 5);
-        graph.addEdge(1, 2, -3);
-        graph.addEdge(2, 4, 4);
-        graph.addEdge(3, 4, 2);
-        graph.addEdge(4, 3, 1);
+			g.addEdge(u, v, w, i);
+		}
+		g.Bellmanford(0);
 
-        BellmanFordShortestPath shortestPath = new BellmanFordShortestPath();
-        Vertex<Integer> startVertex = graph.getAllVertex().iterator().next();
-        Map<Vertex<Integer>,Integer> distance = shortestPath.getShortestPath(graph, startVertex);
-        System.out.println(distance);
-    }
+	}
 
 }
