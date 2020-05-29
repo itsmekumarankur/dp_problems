@@ -1,11 +1,4 @@
 package tushar.graph.questions.set_2.ques_9;
-
-/**
- * Date 11/02/2015
- * 
- * @author Tushar Roy
- *
- */
 public class FloydWarshallAllPairShortestPath {
 
 	static int V = 4;
@@ -44,14 +37,5 @@ public class FloydWarshallAllPairShortestPath {
 			}
 			System.out.println();
 		}
-	}
-
-	public static void main(String arg[]) {
-
-		int graph[][] = { { 0, 5, INF, 10 }, { INF, 0, 3, INF }, { INF, INF, 0, 1 }, { INF, INF, INF, 0 } };
-
-		// Print the solution
-		floydWarshall(graph);
-
 	}
 }

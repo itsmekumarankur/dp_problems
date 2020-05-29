@@ -71,24 +71,5 @@ public class CycleUndirectedGraph<T> {
             }
         }
         return false;
-    }
-    
-    public static void main(String args[]){
-        
-        CycleUndirectedGraph<Integer> cycle = new CycleUndirectedGraph<Integer>();
-        Graph<Integer> graph = new Graph<Integer>(false);
-        
-        graph.addEdge(0, 1);
-        graph.addEdge(1, 2);
-        graph.addEdge(0, 3);
-        graph.addEdge(3, 4);
-        graph.addEdge(4, 5);
-        graph.addEdge(5, 1);
-        boolean isCycle = cycle.hasCycleDFS(graph);
-        System.out.println(isCycle);
-        isCycle = cycle.hasCycleUsingDisjointSets(graph);
-        System.out.print(isCycle);
-        
-    }
-    
+    } 
 }

@@ -11,17 +11,9 @@ import tushar.graph.questions.Vertex;
 import tushar.graph.questions.set_1.ques_5.DisjointSet;
 
 /**
- * Date 09/25/2014
- *
- * @author Tushar Roy
- *         <p>
  *         Find minimum spanning tree usinig Kruskals algorithm
- *         <p>
  *         Time complexity - O(ElogE)
  *         Space complexity - O(E + V)
- *         <p>
- *         References
- *         https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
  */
 
 public class KruskalMST {
@@ -43,11 +35,9 @@ public class KruskalMST {
         List<Edge<Integer>> allEdges = graph.getAllEdges();
         EdgeComparator edgeComparator = new EdgeComparator();
 
-        //sort all edges in non decreasing order
         Collections.sort(allEdges, edgeComparator);
         DisjointSet disjointSet = new DisjointSet();
 
-        //create as many disjoint sets as the total vertices
         for (Vertex<Integer> vertex : graph.getAllVertex()) {
             disjointSet.makeSet(vertex.getId());
         }
@@ -58,9 +48,6 @@ public class KruskalMST {
             //get the sets of two vertices of the edge
             long root1 = disjointSet.findSet(edge.getVertex1().getId());
             long root2 = disjointSet.findSet(edge.getVertex2().getId());
-
-            //check if the vertices are in same set or different set
-            //if verties are in same set then ignore the edge
             if (root1 == root2) {
                 continue;
             } else {
@@ -73,22 +60,4 @@ public class KruskalMST {
         return resultEdge;
     }
 
-    public static void main(String args[]) {
-        Graph<Integer> graph = new Graph<Integer>(false);
-        graph.addEdge(1, 2, 4);
-        graph.addEdge(1, 3, 1);
-        graph.addEdge(2, 5, 1);
-        graph.addEdge(2, 6, 3);
-        graph.addEdge(2, 4, 2);
-        graph.addEdge(6, 5, 2);
-        graph.addEdge(6, 4, 3);
-        graph.addEdge(4, 7, 2);
-        graph.addEdge(3, 4, 5);
-        graph.addEdge(3, 7, 8);
-        KruskalMST mst = new KruskalMST();
-        List<Edge<Integer>> result = mst.getMST(graph);
-        for (Edge<Integer> edge : result) {
-            System.out.println(edge.getVertex1() + " " + edge.getVertex2());
-        }
-    }
 }
