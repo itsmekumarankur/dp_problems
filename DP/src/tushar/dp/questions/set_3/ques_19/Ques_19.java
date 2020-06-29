@@ -1,4 +1,4 @@
-package tushar.dp.questions.set_2.ques_19;
+package tushar.dp.questions.set_3.ques_19;
 public class Ques_19 {
 
 	static boolean dictionaryContains(String word) {

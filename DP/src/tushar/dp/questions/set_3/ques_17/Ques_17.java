@@ -1,4 +1,4 @@
-package tushar.dp.questions.set_2.ques_17;
+package tushar.dp.questions.set_3.ques_17;
 public class Ques_17 {
 	static int longestCommonSubString(String input1, String input2, int maxSoFar) {
 

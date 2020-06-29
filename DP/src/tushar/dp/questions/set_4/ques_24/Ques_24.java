@@ -1,4 +1,4 @@
-package tushar.dp.questions.set_3.ques_24;
+package tushar.dp.questions.set_4.ques_24;
 public class Ques_24 {
 
 	static boolean match(String first, String second) {

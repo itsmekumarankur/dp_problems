@@ -1,4 +1,4 @@
-package tushar.dp.questions.set_3.ques_25;
+package tushar.dp.questions.set_4.ques_25;
 public class Ques_25 {
 
 	public static boolean isPalindrome(String X, int i, int j) {
