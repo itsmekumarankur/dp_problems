@@ -1,4 +1,4 @@
-class LIS 
+public class LIS
 { 
    static int max_ref;
    static int _lis(int arr[], int n) 
