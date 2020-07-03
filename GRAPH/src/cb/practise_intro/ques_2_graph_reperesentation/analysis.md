@@ -1,5 +1,5 @@
 # Adjacency Matrix
-    disadvantage: N2
+    disadv : N2 
 
 # In a graph 
     max Edge: NC2  --- > O(N2)

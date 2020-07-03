@@ -1,4 +1,4 @@
-package tushar.graph.questions;
+package tushar;
 
 
 import java.util.ArrayList;
