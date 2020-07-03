@@ -1,4 +1,4 @@
-package tushar.graph.questions.set_2.ques_9;
+package tushar.set_2.ques_9;
 public class FloydWarshallAllPairShortestPath {
 
 	static int V = 4;

@@ -1,4 +1,4 @@
-package tushar.graph.questions.set_1.ques_4;
+package tushar.set_1.ques_4;
 
 import java.util.*;
 

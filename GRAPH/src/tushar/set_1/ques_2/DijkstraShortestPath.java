@@ -1,9 +1,9 @@
-package tushar.graph.questions.set_1.ques_2;
+package tushar.set_1.ques_2;
 
-import tushar.graph.questions.BinaryMinHeap;
-import tushar.graph.questions.Edge;
-import tushar.graph.questions.Graph;
-import tushar.graph.questions.Vertex;
+import tushar.BinaryMinHeap;
+import tushar.Edge;
+import tushar.Graph;
+import tushar.Vertex;
 
 import java.util.HashMap;
 import java.util.Map;

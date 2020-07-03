@@ -1,4 +1,4 @@
-package tushar.graph.questions.set_2.ques_7;
+package tushar.set_2.ques_7;
 
 import java.util.Scanner;
 

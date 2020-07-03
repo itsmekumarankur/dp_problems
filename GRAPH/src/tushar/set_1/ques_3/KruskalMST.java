@@ -1,14 +1,14 @@
-package tushar.graph.questions.set_1.ques_3;
+package tushar.set_1.ques_3;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import tushar.graph.questions.Edge;
-import tushar.graph.questions.Graph;
-import tushar.graph.questions.Vertex;
-import tushar.graph.questions.set_1.ques_5.DisjointSet;
+import tushar.Edge;
+import tushar.Graph;
+import tushar.Vertex;
+import tushar.set_1.ques_5.DisjointSet;
 
 /**
  *         Find minimum spanning tree usinig Kruskals algorithm

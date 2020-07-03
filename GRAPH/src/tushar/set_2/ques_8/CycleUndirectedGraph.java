@@ -1,13 +1,13 @@
-package tushar.graph.questions.set_2.ques_8;
+package tushar.set_2.ques_8;
 
 
 import java.util.HashSet;
 import java.util.Set;
 
-import tushar.graph.questions.Edge;
-import tushar.graph.questions.Graph;
-import tushar.graph.questions.Vertex;
-import tushar.graph.questions.set_1.ques_5.DisjointSet;
+import tushar.Edge;
+import tushar.Graph;
+import tushar.Vertex;
+import tushar.set_1.ques_5.DisjointSet;
 
 /**
  * Ques_12: Tushar Roy Graph

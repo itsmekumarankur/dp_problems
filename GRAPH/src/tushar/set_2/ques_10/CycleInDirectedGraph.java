@@ -1,11 +1,11 @@
-package tushar.graph.questions.set_2.ques_10;
+package tushar.set_2.ques_10;
 
 
 import java.util.HashSet;
 import java.util.Set;
 
-import tushar.graph.questions.Graph;
-import tushar.graph.questions.Vertex;
+import tushar.Graph;
+import tushar.Vertex;
 
 /**
  * http://www.geeksforgeeks.org/detect-cycle-in-a-graph/

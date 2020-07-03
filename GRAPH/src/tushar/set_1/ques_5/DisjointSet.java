@@ -1,4 +1,4 @@
-package tushar.graph.questions.set_1.ques_5;
+package tushar.set_1.ques_5;
 
 import java.util.HashMap;
 import java.util.Map;

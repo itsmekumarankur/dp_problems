@@ -1,6 +1,6 @@
-package tushar.graph.questions.set_1.ques_1;
-import tushar.graph.questions.Graph;
-import tushar.graph.questions.Vertex;
+package tushar.set_1.ques_1;
+import tushar.Graph;
+import tushar.Vertex;
 
 import java.util.HashSet;
 import java.util.Set;

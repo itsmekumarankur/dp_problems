@@ -1,4 +1,4 @@
-package tushar.graph.questions.set_2.ques_6;
+package tushar.set_2.ques_6;
 
 /**
  * https://www.youtube.com/watch?v=JE0JE8ce1V0&t=539s
