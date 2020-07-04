@@ -1,7 +1,4 @@
 # BFS
 BFS in iterative Way
-    - Breadth First (level order)
+    - Breadth First
     - solve by queue
-
-
-DFS 
