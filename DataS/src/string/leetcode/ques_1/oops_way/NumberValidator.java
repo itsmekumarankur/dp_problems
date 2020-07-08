@@ -1,4 +1,4 @@
-package string.leetcode.ques_1;
+package string.leetcode.ques_1.oops_way;
 import java.util.ArrayList;
 
 import string.leetcode.ques_1.validators.FloatValidate;

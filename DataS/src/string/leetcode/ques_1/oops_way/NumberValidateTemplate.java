@@ -1,4 +1,4 @@
-package string.leetcode.ques_1;
+package string.leetcode.ques_1.oops_way;
 
 
 

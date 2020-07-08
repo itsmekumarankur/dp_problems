@@ -1,0 +1,66 @@
+The following cases need to be handled in the code.
+
+	Ignore the leading and trailing white spaces.
+	Ignore the ‘+’, ‘-‘ and’.’ at the start.
+	Ensure that the characters in the string belong to {+, -, ., e, [0-9]}
+	Ensure that no ‘.’ comes after ‘e’.
+	A dot character ‘.’ should be followed by a digit.
+	The character ‘e’ should be followed either by ‘+’, ‘-‘, or a digit.
+  
+  
+  
+  
+  
+  
+  1. trims the white spaces
+  2. if string is of length 1 and the only character is not a digit
+  3. If the 1st char is not '+', '-', '.' or digit 
+  4. To check if a '.' or 'e' is found in given string. We use this flag to make sure that either of them appear only once. 
+  5. LOOP
+  		// If any of the char does not belong to 
+            // {digit, +, -, ., e} 
+            
+      for (int i = 1; i < str.length(); i++) { 
+      
+            // If any of the char does not belong to  {digit, +, -, ., e}
+             
+            if (!Character.isDigit(str.charAt(i)) 
+                && str.charAt(i) != 'e' && str.charAt(i) != '.'
+                && str.charAt(i) != '+' && str.charAt(i) != '-') 
+                return false;
+                
+                      
+  			if (str.charAt(i) == '.') { 
+  			
+                // checks if the char 'e' has already occurred before '.' If yes, return 0. 
+                if (flagDotOrE == true) 
+                    return false; 
+  
+                // If '.' is the last character. 
+                if (i + 1 >= str.length()) 
+                    return false; 
+  
+                // if '.' is not followed by a digit. 
+                if (!Character.isDigit(str.charAt(i + 1))) 
+                    return false; 
+            }  
+            else if (str.charAt(i) == 'e') { 
+                // set flagDotOrE = 1 when e is encountered. 
+                flagDotOrE = true; 
+  
+                // if there is no digit before 'e'. 
+                if (!Character.isDigit(str.charAt(i - 1))) 
+                    return false; 
+  
+                // If 'e' is the last Character 
+                if (i + 1 >= str.length()) 
+                    return false; 
+  
+                // if e is not followed either by '+', '-' or a digit 
+                if (!Character.isDigit(str.charAt(i + 1)) 
+                    && str.charAt(i + 1) != '+'
+                    && str.charAt(i + 1) != '-') 
+                    return false; 
+            } 
+            
+     }
